@@ -1,6 +1,3 @@
-Aqui está uma sugestão para o **README.md** do repositório:
-
-```markdown
 # Hello DevOps World - Web Apps
 
 Bem-vindo ao repositório **Hello DevOps World - Web Apps**! 🎉
