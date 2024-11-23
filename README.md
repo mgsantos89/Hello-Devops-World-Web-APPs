@@ -15,10 +15,10 @@ As aplicações estão organizadas por linguagem/framework, cada uma com sua pr�
 
 ```plaintext
 hello-devops-world-web-apps/
-├── php/         # Aplicações Hello World em PHP
-├── nodejs/      # Aplicações Hello World em Node.js
-├── go/          # Aplicações Hello World em Go
-├── python/      # Aplicações Hello World em Python
+├── laravel_hello-devops-world/         # Aplicações Hello World em PHP
+├── nodejs_hello-devops-world/      # Aplicações Hello World em Node.js
+├── go_hello-devops-world/          # Aplicações Hello World em Go
+├── python_hello-devops-world/      # Aplicações Hello World em Python
 └── README.md    # Documentação principal
 ```
 
@@ -54,7 +54,7 @@ Este repositório é licenciado sob a [MIT License](LICENSE). Fique à vontade p
 
 💡 **Vamos construir juntos!** Este repositório é parte do meu portfólio DevOps e foi criado para compartilhar conhecimento com a comunidade. Espero que seja útil para você!
 
-📫 **Contato:** [seu.email@exemplo.com](mailto:seu.email@exemplo.com)
+📫 **Contato:** [marco@mgsantos.com.br](mailto:marco@mgsantos.com.br)
 ```
 
-Você pode ajustar o texto de acordo com o seu estilo e incluir o link do repositório e seu e-mail ou rede social para contato. Esse README será uma ótima vitrine para seu portfólio público! 🚀
+
