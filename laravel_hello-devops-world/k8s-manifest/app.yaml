@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: laravel-hello-devops
+  labels:
+    app: laravel-hello-devops
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: laravel-hello-devops
+  template:
+    metadata:
+      labels:
+        app: laravel-hello-devops
+    spec:
+      containers:
+        - name: laravel-app
+          image: mgsantos89/laravel_hello-devops-world:v.1
+          ports:
+            - containerPort: 80
+          env:
+            - name: APP_ENV
+              value: "production"
+            - name: APP_DEBUG
+              value: "false"
+          resources:
+            requests:
+              memory: "16Mi"
+              cpu: "50m"
+            limits:
+              memory: "32Mi"
+              cpu: "100m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: laravel-service
+spec:
+  selector:
+    app: laravel-hello-devops
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
