@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-hello-devops-world
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs-hello-devops-world
+  template:
+    metadata:
+      labels:
+        app: nodejs-hello-devops-world
+    spec:
+      containers:
+      - name: nodejs-hello-devops-world
+        image: mgsantos89/nodejs_hello-devops-world:v1
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodejs-hello-devops-world-service
+spec:
+  selector:
+    app: nodejs-hello-devops-world
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
