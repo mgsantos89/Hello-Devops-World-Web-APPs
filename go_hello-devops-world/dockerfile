@@ -1,0 +1,28 @@
+# Etapa de construção
+FROM golang:1.20 AS builder
+
+# Diretório de trabalho dentro do container
+WORKDIR /app
+
+# Copiar os arquivos do projeto para o container
+COPY go.mod .
+COPY main.go .
+
+# Baixar dependências e compilar a aplicação de forma estática
+RUN go mod tidy
+RUN CGO_ENABLED=0 go build -o go_hello-devops-world
+
+# Etapa final
+FROM scratch
+
+# Diretório de trabalho dentro do container
+WORKDIR /app
+
+# Copiar o binário compilado
+COPY --from=builder /app/go_hello-devops-world .
+
+# Porta exposta
+EXPOSE 8080
+
+# Comando para rodar o servidor
+CMD ["./go_hello-devops-world"]
